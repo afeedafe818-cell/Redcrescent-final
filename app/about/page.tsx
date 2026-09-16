@@ -3,15 +3,8 @@ import Typography from "@mui/material/Typography";
 
 export default function About() {
   return (
-    <div>
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          marginLeft: 30,
-          width: 950,
-        }}
-      >
+    <div className="overflow-hidden">
+      <Box className="mx-auto w-full max-w-4xl px-4 sm:px-8">
         <Box sx={{ mt: -2 }}>
           <Typography variant="h3" sx={{ mt: 10, mb: 3, fontWeight: "bold" }}>
             Our Story
@@ -39,27 +32,13 @@ export default function About() {
         <Box
           component="img"
           src="Images/head1.jpeg"
-          width={650}
-          sx={{
-            display: "block",
-            margin: "0 auto",
-            borderRadius: 5,
-            marginTop: 7,
-          }}
+          alt="Red Crescent campus"
+          className="mx-auto mt-7 h-64 w-full max-w-2xl rounded-xl object-cover sm:h-80"
         />
 
         <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            gap: 20,
-            mt: -20,
-            mb: -2,
-            px: 20,
-            py: 20,
-            mr: 1,
-            bgcolor: "#FFF8F0",
-          }}
+          className="mt-8 grid grid-cols-1 gap-8 bg-[#FFF8F0] px-4 py-10 sm:px-10 lg:grid-cols-2"
+          sx={{ display: "grid" }}
         >
           <Box>
             <Typography sx={{ fontSize: 35, marginTop: 10 }}>Vision</Typography>

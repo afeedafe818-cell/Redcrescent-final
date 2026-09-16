@@ -17,198 +17,65 @@ const courses = [
     image: "Bachelors/pych.jpg",
     title: "Bachelor in Psychology",
     description:
-      "An introductory study of human mind and behavior, covering cognitive processes, developmental theories, personality structures, and foundational psychological assessments.",
+      "An introductory study of human mind and behavior, covering cognitive processes, developmental theories, personality structures, and foundational psychological assessments",
   },
   {
     image: "Diploma/hr.jpg",
     title: "Diploma in Human Resource Management",
     description:
-      "A practical business program that builds core capabilities in corporate recruitment strategies, workforce scheduling, employee relations, payroll support, and workplace performance management.",
+      "A practical business program that builds core capabilities in corporate recruitment strategies, workforce scheduling, employee relations, payroll support, and workplace performance management",
   },
 ];
 
-function CourseCard({
-  image,
-  title,
-  description
-}) {
-  return (
-    <Card
-      sx={{
-        width: "100%",
-        height: 560,
-
-        display: "flex",
-        flexDirection: "column",
-
-        borderRadius: 3,
-        overflow: "hidden",
-
-        boxSizing: "border-box",
-
-        boxShadow: "0 4px 15px rgba(0, 0, 0, 0.10)",
-
-        transition: "all 0.3s ease",
-
-        "&:hover": {
-          transform: "translateY(-5px)",
-          boxShadow: "0 8px 25px rgba(0, 0, 0, 0.15)",
-        },
-      }}
-    >
-      {/* IMAGE */}
-      <CardMedia
-        component="img"
-        image={image}
-        alt={title}
-        sx={{
-          width: "100%",
-          height: 260,
-          minHeight: 260,
-          objectFit: "cover",
-          flexShrink: 0,
-        }}
-      />
-
-      {/* CONTENT */}
-      <CardContent
-        sx={{
-          p: 3,
-          flexGrow: 1,
-          overflow: "hidden",
-        }}
-      >
-        {/* TITLE */}
-        <Typography
-          component="h2"
-          sx={{
-            fontWeight: 600,
-            fontSize: 20,
-            lineHeight: 1.3,
-
-            height: 52,
-            minHeight: 52,
-
-            mb: 2,
-
-            display: "-webkit-box",
-            WebkitLineClamp: 2,
-            WebkitBoxOrient: "vertical",
-            overflow: "hidden",
-          }}
-        >
-          {title}
-        </Typography>
-
-        {/* DESCRIPTION */}
-        <Typography
-          variant="body2"
-          sx={{
-            color: "text.secondary",
-            fontSize: 15,
-            lineHeight: 1.6,
-
-            height: 120,
-            minHeight: 120,
-
-            display: "-webkit-box",
-            WebkitLineClamp: 5,
-            WebkitBoxOrient: "vertical",
-            overflow: "hidden",
-          }}
-        >
-          {description}
-        </Typography>
-      </CardContent>
-
-      {/* BUTTON */}
-      <CardActions
-        sx={{
-          px: 3,
-          pb: 3,
-          pt: 0,
-          mt: "auto",
-          flexShrink: 0,
-        }}
-      >
-        <Button
-          variant="contained"
-          sx={{
-            fontSize: 15,
-            borderRadius: "20px",
-
-            backgroundColor: "#129A6A",
-            color: "white",
-
-            px: 3,
-            py: 1,
-
-            textTransform: "none",
-
-            border: "1px solid #129A6A",
-
-            transition: "all 0.3s ease",
-
-            "&:hover": {
-              bgcolor: "white",
-              color: "#129A6A",
-            },
-          }}
-        >
-          Know More
-        </Button>
-      </CardActions>
-    </Card>
-  );
-}
+const buttonSx = {
+  fontSize: 15,
+  marginRight: 20,
+  border: "1px solid green",
+  borderRadius: "20px",
+  backgroundColor: "#129A6A",
+  color: "white",
+  transition: "all 0.3s ease",
+  "&:hover": {
+    bgcolor: "white",
+    color: "#129A6A",
+  },
+};
 
 export default function CourseSection() {
   return (
-    <Box
-      sx={{
-        minHeight: "100vh",
-        bgcolor: "#FFF8F0",
-      }}
-    >
-      {/* COURSE GRID */}
-      <Box
-        sx={{
-          width: "100%",
-          maxWidth: 1400,
-
-          mx: "auto",
-
-          px: {
-            xs: 2,
-            sm: 3,
-            md: 4,
-          },
-
-          py: 5,
-          pb: 10,
-
-          display: "grid",
-
-          gridTemplateColumns: {
-            xs: "1fr",
-            sm: "repeat(2, minmax(0, 1fr))",
-            md: "repeat(3, minmax(0, 1fr))",
-          },
-
-          gap: 4,
-
-          alignItems: "stretch",
-        }}
-      >
-        {courses.map((course) => (
-          <CourseCard
-            key={course.title}
+    <Box className="grid grid-cols-1 gap-6 bg-[#FFF8F0] p-4 sm:grid-cols-2 lg:grid-cols-3">
+      {courses.map((course) => (
+        <Card
+          key={course.title}
+          className="flex w-full flex-col"
+          sx={{
+            maxWidth: 400,
+            height: "100%",
+            transition: "transform 0.25s ease, box-shadow 0.25s ease",
+            "&:hover": {
+              transform: "scale(1.03)",
+              boxShadow: 6,
+            },
+          }}
+        >
+          <CardMedia
+            className="hover-zoom-media h-56 object-cover sm:h-64"
             image={course.image}
             title={course.title}
-            description={course.description}
           />
-        ))}
-      </Box>
+          <CardContent sx={{ flexGrow: 1 }}>
+            <Typography className="consistent-heading" gutterBottom component="div">
+              {course.title}
+            </Typography>
+            <Typography className="consistent-body" sx={{ color: "text.secondary" }}>
+              {course.description}
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Button sx={buttonSx}>Know More</Button>
+          </CardActions>
+        </Card>
+      ))}
     </Box>
   );
 }

@@ -1,7 +1,5 @@
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import ImageList from "@mui/material/ImageList";
-import ImageListItem from "@mui/material/ImageListItem";
 import Typography from "@mui/material/Typography";
 
 const itemData = [
@@ -49,7 +47,7 @@ const itemData = [
 
 export default function Gropuphoto() {
   return (
-    <Box>
+    <Box className="px-4 py-8 sm:px-8">
       <Typography
         variant="h4"
         sx={{
@@ -61,13 +59,8 @@ export default function Gropuphoto() {
         A Wholesome Campus Life
       </Typography>
       <Box
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          flexWrap: "wrap",
-          gap: 3,
-          mt: 4,
-        }}
+        className="mt-8 grid grid-cols-1 justify-items-center gap-6 sm:grid-cols-2 lg:grid-cols-4"
+        sx={{ display: "grid" }}
       >
         {itemData.map((i) => (
           <Box
@@ -75,21 +68,31 @@ export default function Gropuphoto() {
             component="img"
             src={i.img}
             alt={i.title}
-            sx={{
-              width: 300,
-              height: 200,
-              objectFit: "cover",
-              borderRadius: 2,
-               transition: "all 0.3s ease",
-                  "&:hover": {
-          transform: "translateY(-5px)",
-          boxShadow: "0 8px 25px rgba(0, 0, 0, 0.15)",
-        },
-            }}
+            className="hover-zoom-image h-48 w-full max-w-[300px] rounded-lg object-cover"
+            sx={{ objectFit: "cover" }}
           />
         ))}
       </Box>
-   
+      <Box
+        className="mt-8 flex justify-center"
+      >
+        <Button
+          sx={{
+            fontSize: 15,
+            border: "1px solid green",
+            borderRadius: "20px",
+            backgroundColor: "#129A6A",
+            color: "white",
+            transition: "all 0.3s ease",
+            "&:hover": {
+              bgcolor: "white",
+              color: "#129A6A",
+            },
+          }}
+        >
+          View More
+        </Button>
+      </Box>
     </Box>
   );
 }

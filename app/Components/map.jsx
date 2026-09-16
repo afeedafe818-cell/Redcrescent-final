@@ -9,19 +9,15 @@ export default function Map() {
   const mapContainer = useRef(null);
   const map = useRef(null);
   const Feroke = { lng: 75.8481732, lat: 11.1824855 };
-  const zoom = 16;
-  maptilersdk.config.apiKey = process.env.NEXT_PUBLIC_MAPTILER_API_KEY;
-        console.log(
-  "API KEY:",
-  process.env.NEXT_PUBLIC_MAPTILER_API_KEY
-);
+  const zoom = 14;
 
   useEffect(() => {
     if (map.current) return;
 
+    maptilersdk.config.apiKey = process.env.NEXT_PUBLIC_MAPTILER_API_KEY;
     map.current = new maptilersdk.Map({
       container: mapContainer.current,
-    style: maptilersdk.MapStyle.STREETS, 
+      style: "base-v4",
       center: [Feroke.lng, Feroke.lat],
       zoom: zoom,
       cooperativeGestures: true,
@@ -32,18 +28,9 @@ export default function Map() {
     <div className="map-wrap">
       <Box
         ref={mapContainer}
-        className="map"
-        sx={{
-          marginLeft: 1,
-          width: 1500,
-          height: 600,
-          marginTop: 15,
-          position: "relative",
-          zIndex: 50,
-        }}
+        className="map relative z-50 mt-8 h-[28rem] w-full sm:mt-12 sm:h-[37.5rem]"
+        sx={{ marginLeft: 0 }}
       />
-
-      
     </div>
   );
 }

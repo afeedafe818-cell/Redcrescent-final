@@ -6,17 +6,10 @@ export default function Grid() {
   const Readmore = () => {
     navigate("/about");
   };
+
   return (
-    <Box
-      sx={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        p: 8,
-        bgcolor: "#FFF8F0",
-      }}
-    >
-      <Box sx={{ marginRight: "10px" }}>
+    <Box className="flex flex-col items-center gap-8 bg-[#FFF8F0] p-6 sm:p-10 lg:flex-row lg:justify-between lg:p-16">
+      <Box className="w-full lg:w-1/2" sx={{ marginRight: "10px" }}>
         <Typography variant="h6" sx={{ marginLeft: "20px", color: "#129A6A" }}>
           QUALITY EDUCATION FOR ALL
         </Typography>
@@ -48,7 +41,6 @@ export default function Grid() {
         <Button
           sx={{
             fontSize: 20,
-            marginRight: 15,
             border: "1px solid green",
             borderRadius: "20px",
             backgroundColor: "#129A6A",
@@ -69,10 +61,10 @@ export default function Grid() {
       <Box
         component="img"
         src="Images/twostud.jpeg"
-        alt=""
-        width={500}
+        alt="Students on campus"
+        className="hover-zoom-image h-auto max-h-150 w-full object-contain sm:h-auto lg:w-1/2 sm-2px"
         sx={{ borderRadius: "20px", marginRight: "10px" }}
-      ></Box>
+      />
     </Box>
   );
 }

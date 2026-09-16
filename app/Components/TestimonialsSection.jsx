@@ -21,31 +21,24 @@ const imgs = [
 export default function TestimonialsSection() {
   return (
     <Box
-      sx={{
-        display: "flex",
-        justifyContent: "space-between",
-        p: 1,
-        border: "1px solid white",
-        margin: 5,
-      }}
+      className="mx-4 grid grid-cols-1 gap-8 border border-white p-4 sm:mx-8 sm:grid-cols-3"
+      sx={{ display: "grid" }}
     >
       {imgs.map((image, index) => (
-        <Box key={index} sx={{ textAlign: "center", maxWidth: 350 }}>
+        <Box
+          key={index}
+          className="mx-auto flex w-full max-w-sm flex-col items-center text-center"
+        >
           <Box
             component="img"
             src={image.img}
             alt={image.title}
-            sx={{
-              width: 90,
-              border: "3px solid",
-              borderRadius: "40px",
-              p: "5px",
-            }}
+            className="hover-zoom-image block h-24 w-24 shrink-0 rounded-full border-[3px] object-cover p-1"
           />
-          <Typography variant="h6" sx={{ mt: 1 }}>
+          <Typography className="consistent-heading mt-2 w-full">
             {image.title}
           </Typography>
-          <Typography variant="body2">{image.dec}</Typography>
+          <Typography className="consistent-body w-full">{image.dec}</Typography>
         </Box>
       ))}
     </Box>

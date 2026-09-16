@@ -1,5 +1,4 @@
 "use client";
-
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -24,242 +23,74 @@ const category = [
 
 const courses = [
   {
-    image: "Bachelors/labtech.webp",
-    title: "Bachelor in Medical Laboratory Technology",
+    image: "Diploma/administration.jpg",
+    title: "Diploma in Hospital Administration",
     description:
-      "A hands-on clinical science program that trains students in diagnostic pathology, hematology, and clinical biochemistry to accurately process medical specimens for patient diagnosis.",
+      "A foundational healthcare program designed to equip students with practical skills in medical facility operations, patient services administration, front-office management, and hospital workflow coordination.",
   },
   {
-    image: "Bachelors/radio.jpg",
-    title: "Bachelors in Radiology and Medical Imaging Technology",
+    image: "Diploma/hr.jpg",
+    title: "Diploma in Human Resource Management",
     description:
-      "An allied health degree focused on the operating principles of diagnostic imaging equipment, including X-rays, CT scans, MRIs, and ultrasound systems for medical evaluations.",
+      "A practical business program that builds core capabilities in corporate recruitment strategies, workforce scheduling, employee relations, payroll support, and workplace performance management",
   },
   {
-    image: "Bachelors/ot.jpg",
-    title: "Bachelor in Operation Theatre Technology",
+    image: "Diploma/business.jpg",
+    title: "Diploma in Business Management",
     description:
-      "A practical medical program that prepares professionals to set up surgical suites, sterilize high-tech equipment, and assist surgical teams during complex operative procedures.",
+      "An introductory management program focused on fundamental business concepts, team supervision, customer relations management, basic financial accounting, and day-to-day business operations.",
   },
   {
-    image: "Bachelors/bha.jpg",
-    title: "Bachelor in Hospital Administration",
+    image: "Diploma/office.jpg",
+    title: "Diploma in Office Administration",
     description:
-      "A specialized healthcare management degree equipping students with foundational skills in facility operations, medical records administration, patient care, and health services.",
+      "A practical business program designed to equip students with essential skills in administrative support, business communication, record management, and day-to-day office workflow execution.",
   },
   {
-    image: "Bachelors/technology.jpg",
-    title: "Bachelor in Dialysis Technology",
+    image: "Diploma/teacher.jpg",
+    title: "Diploma in Education and Training",
     description:
-      "A focused clinical program training specialists to operate, calibrate, and maintain hemodialysis machinery while continuously monitoring patients undergoing renal treatments.",
+      "A foundational teaching program that builds core capabilities in modern instructional methods, classroom management techniques, curriculum delivery, and learner assessment strategies.",
   },
   {
-    image: "Bachelors/CSSD.jpg",
-    title: "Bachelor in Central Sterile Supply Department (CSSD) Technology",
+    image: "Diploma/nutri.jpg",
+    title: "Diploma in Nutrition and Dietetics",
     description:
-      "A specialized infection control degree focused on the decontamination, sterilization, quality control, and distribution of medical instruments across clinical environments.",
-  },
-  {
-    image: "Bachelors/bba.jpg",
-    title: "Bachelor of Business Administration (BBA)",
-    description:
-      "A foundational management degree providing comprehensive exposure to essential corporate practices, including financial accounting, team leadership, and marketing strategy.",
-  },
-  {
-    image: "Bachelors/entre.webp",
-    title: "Bachelor in Marketing & Entrepreneurship",
-    description:
-      "An action-oriented business program teaching dynamic growth marketing, startup venture creation, product validation, and digital customer acquisition strategies.",
-  },
-  {
-    image: "Bachelors/public.jpg",
-    title: "Bachelor in Public Administration",
-    description:
-      "A public policy degree exploring government administrative structures, public sector economics, policy development, and community governance for public service careers.",
-  },
-  {
-    image: "Bachelors/social.jpg",
-    title: "Bachelor in Social Work",
-    description:
-      "An applied social science degree combining theoretical coursework and field training to prepare students for community outreach, NGO administration, and social welfare.",
-  },
-  {
-    image: "Bachelors/pych.jpg",
-    title: "Bachelor in Psychology",
-    description:
-      "An introductory study of human mind and behavior, covering cognitive processes, developmental theories, personality structures, and foundational psychological assessments.",
+      "An applied health science program focused on fundamental nutritional principles, personal diet planning, community health wellness, and food service nutritional management.",
   },
 ];
 
-function CourseCard({
-  image,
-  title,
-  description,
-}: {
-  image: string;
-  title: string;
-  description: string;
-}) {
-  return (
-    <Card
-      sx={{
-        width: "100%",
-        height: 560,
+const buttonSx = {
+  fontSize: 15,
+  marginRight: 20,
+  border: "1px solid green",
+  borderRadius: "20px",
+  backgroundColor: "#129A6A",
+  color: "white",
+  transition: "all 0.3s ease",
+  "&:hover": {
+    bgcolor: "white",
+    color: "#129A6A",
+  },
+};
 
-        display: "flex",
-        flexDirection: "column",
-
-        borderRadius: 3,
-        overflow: "hidden",
-
-        boxSizing: "border-box",
-
-        boxShadow: "0 4px 15px rgba(0, 0, 0, 0.10)",
-
-        transition: "all 0.3s ease",
-
-        "&:hover": {
-          transform: "translateY(-5px)",
-          boxShadow: "0 8px 25px rgba(0, 0, 0, 0.15)",
-        },
-      }}
-    >
-      {/* IMAGE */}
-      <CardMedia
-        component="img"
-        image={image}
-        alt={title}
-        sx={{
-          width: "100%",
-          height: 260,
-          minHeight: 260,
-          objectFit: "cover",
-          flexShrink: 0,
-        }}
-      />
-
-      {/* CONTENT */}
-      <CardContent
-        sx={{
-          p: 3,
-          flexGrow: 1,
-          overflow: "hidden",
-        }}
-      >
-        {/* TITLE */}
-        <Typography
-          component="h2"
-          sx={{
-            fontWeight: 600,
-            fontSize: 20,
-            lineHeight: 1.3,
-
-            height: 52,
-            minHeight: 52,
-
-            mb: 2,
-
-            display: "-webkit-box",
-            WebkitLineClamp: 2,
-            WebkitBoxOrient: "vertical",
-            overflow: "hidden",
-          }}
-        >
-          {title}
-        </Typography>
-
-        {/* DESCRIPTION */}
-        <Typography
-          variant="body2"
-          sx={{
-            color: "text.secondary",
-            fontSize: 15,
-            lineHeight: 1.6,
-
-            height: 120,
-            minHeight: 120,
-
-            display: "-webkit-box",
-            WebkitLineClamp: 5,
-            WebkitBoxOrient: "vertical",
-            overflow: "hidden",
-          }}
-        >
-          {description}
-        </Typography>
-      </CardContent>
-
-      {/* BUTTON */}
-      <CardActions
-        sx={{
-          px: 3,
-          pb: 3,
-          pt: 0,
-          mt: "auto",
-          flexShrink: 0,
-        }}
-      >
-        <Button
-          variant="contained"
-          sx={{
-            fontSize: 15,
-            borderRadius: "20px",
-
-            backgroundColor: "#129A6A",
-            color: "white",
-
-            px: 3,
-            py: 1,
-
-            textTransform: "none",
-
-            border: "1px solid #129A6A",
-
-            transition: "all 0.3s ease",
-
-            "&:hover": {
-              bgcolor: "white",
-              color: "#129A6A",
-            },
-          }}
-        >
-          Know More
-        </Button>
-      </CardActions>
-    </Card>
-  );
-}
-
-export default function Bachelors() {
+export default function Diploma() {
   const router = useRouter();
-
   return (
-    <Box
-      sx={{
-        minHeight: "100vh",
-        bgcolor: "#FFF8F0",
-      }}
-    >
+    <Box className="course-page">
       <Hero />
-
-      {/* CATEGORY DROPDOWN */}
       <Box
         sx={{
           display: "flex",
           justifyContent: "center",
-          py: 6,
-          px: 2,
+          gap: 5,
+          marginTop: 8,
         }}
       >
         <Autocomplete
           disablePortal
           options={category}
-          sx={{
-            width: {
-              xs: "100%",
-              sm: 350,
-            },
-          }}
+          sx={{ width: 300 }}
           getOptionLabel={(option) => option.label}
           onChange={(event, value) => {
             if (value) {
@@ -267,50 +98,63 @@ export default function Bachelors() {
             }
           }}
           renderInput={(params) => (
-            <TextField
-              {...params}
-              label="Select Category"
-            />
+            <TextField {...params} label=" Select Catagory" />
           )}
         />
       </Box>
-
-      {/* COURSE GRID */}
       <Box
         sx={{
-          width: "100%",
-          maxWidth: 1400,
-
-          mx: "auto",
-
-          px: {
-            xs: 2,
-            sm: 3,
-            md: 4,
-          },
-
-          pb: 10,
-
+          marginBottom: 10,
+          bgcolor: "#FFF8F0",
           display: "grid",
-
           gridTemplateColumns: {
             xs: "1fr",
-            sm: "repeat(2, minmax(0, 1fr))",
-            md: "repeat(3, minmax(0, 1fr))",
+            sm: "repeat(2, 1fr)",
+            lg: "repeat(3, 1fr)",
           },
-
           gap: 4,
-
-          alignItems: "stretch",
+          p: 3,
         }}
       >
         {courses.map((course) => (
-          <CourseCard
+          <Card
             key={course.title}
-            image={course.image}
-            title={course.title}
-            description={course.description}
-          />
+            sx={{
+              maxWidth: 400,
+              width: "100%",
+              mx: "auto",
+              display: "flex",
+              flexDirection: "column",
+              height: "100%",
+              transition: "transform 0.25s ease, box-shadow 0.25s ease",
+              "&:hover": {
+                transform: "scale(1.03)",
+                boxShadow: 6,
+              },
+            }}
+          >
+            <CardMedia
+              sx={{ height: 300 }}
+              image={course.image}
+              title={course.title}
+            />
+            <CardContent sx={{ flexGrow: 1 }}>
+              <Typography
+                gutterBottom
+                variant="h5"
+                component="div"
+                sx={{ fontSize: 18 }}
+              >
+                {course.title}
+              </Typography>
+              <Typography variant="body2" sx={{ color: "text.secondary" }}>
+                {course.description}
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Button sx={buttonSx}>Know More</Button>
+            </CardActions>
+          </Card>
         ))}
       </Box>
     </Box>

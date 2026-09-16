@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -16,7 +15,6 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import Grid from "@mui/material/Grid";
 import { useRouter } from "next/navigation";
 
 const drawerWidth = 240;
@@ -29,9 +27,8 @@ const routes = {
   Contact: "/contact",
 };
 
-function Navbar(props) {
+function Navbar() {
   const router = useRouter();
-  const { window } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {
@@ -75,6 +72,15 @@ function Navbar(props) {
         position="fixed"
       >
         <Toolbar>
+          <IconButton
+            color="inherit"
+            aria-label="open navigation menu"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ display: { xs: "inline-flex", sm: "none" } }}
+          >
+            <MenuIcon />
+          </IconButton>
           <Typography
             variant="h6"
             component="div"
@@ -153,18 +159,7 @@ function Navbar(props) {
           {drawer}
         </Drawer>
       </nav>
-      <Box component="main" sx={{ p: 3 }}>
-        <Toolbar />
-      </Box>
-      <Typography>QUALITY EDUCATION FOR ALL</Typography>
-      <Typography>
-        Professional Courses in <br />
-        Calicut,Kerala
-      </Typography>
-      <Typography>
-        Welcome to <a href="">Redcrescent Institute of paramedical science</a>,
-        a leading professional education institute known for providing
-      </Typography>
+      <Toolbar sx={{ minHeight: { xs: 56, sm: 64 } }} />
     </Box>
   );
 }

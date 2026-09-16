@@ -43,16 +43,14 @@ export default function Hero() {
   }, []);
 
   return (
-    <Box sx={{ position: "relative" }}>
+    <Box className="relative w-full max-w-full overflow-hidden" sx={{ position: "relative" }}>
       <motion.img
         src={Image[current].url}
         initial={{ x: 300, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.6 }}
+        className="block h-[55vh] w-full max-w-full object-cover sm:h-[70vh] lg:h-[90vh]"
         style={{
-          width: "100%",
-          height: "90vh",
-          objectFit: "cover",
           filter: "brightness(60%)",
         }}
       />
@@ -62,7 +60,7 @@ export default function Hero() {
         sx={{
           position: "absolute",
           top: "50%",
-          right: 20,
+          right: { xs: 8, sm: 20 },
           transform: "translateY(-50%)",
           bgcolor: "rgba(255,255,255,0.7)",
           zIndex: 10,
@@ -78,7 +76,7 @@ export default function Hero() {
         sx={{
           position: "absolute",
           top: "50%",
-          left: 20,
+          left: { xs: 8, sm: 20 },
           transform: "translateY(-50%)",
           bgcolor: "rgba(255,255,255,0.7)",
           zIndex: 10,
@@ -95,13 +93,12 @@ export default function Hero() {
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.8 }}
+        className="absolute left-4 top-1/2 z-10 w-[calc(100%_-_2rem)] -translate-y-1/2 text-white sm:left-16 sm:w-auto sm:max-w-2xl"
         sx={{
           position: "absolute",
-          top: "20%",
-          left: 20,
+          top: "50%",
+          left: { xs: 16, sm: 64 },
           transform: "translateY(-50%)",
-          zIndex: 10,
-          marginLeft: "100px",
           color: "white",
         }}
       >
@@ -117,6 +114,7 @@ export default function Hero() {
         <Typography
           variant="h3"
           component={motion.h3}
+          sx={{ fontSize: { xs: "1.7rem", sm: "3rem" }, lineHeight: 1.2 }}
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
@@ -127,6 +125,7 @@ export default function Hero() {
         <Typography
           variant="h5"
           component={motion.h5}
+          sx={{ fontSize: { xs: "1rem", sm: "1.5rem" } }}
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
@@ -137,8 +136,8 @@ export default function Hero() {
           href="https://docs.google.com/forms/d/e/1FAIpQLSeuPW7LBshuoNXyXf5_Be0HJuv6jCi7zOpU1nFRSjmB2rgeQQ/viewform?usp=sharing&ouid=111701974333241427644"
           target="_blank"
           sx={{
-            fontSize: 20,
-            marginRight: 15,
+            fontSize: { xs: 16, sm: 20 },
+            marginRight: { xs: 0, sm: 15 },
             border: "1px solid green",
             borderRadius: "20px",
             backgroundColor: "#129A6A",

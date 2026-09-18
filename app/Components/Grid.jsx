@@ -19,15 +19,15 @@ export default function Grid() {
         <Typography sx={{ marginLeft: "20px" }}>
           Welcome to Red Crescent Medical Institute, a trusted medical education
           institute
-          <br /> with a strong history of **10 years of Excellence** in
+          <br /> with a strong history of 10 years of Excellence in
           healthcare education
           <br /> and training. Over the past decade, we have been committed to
           providing quality education and creating a supportive environment for
           students aspiring to build
           <br /> successful careers in the medical and healthcare field.
           <br />
-          <br /> With experienced faculty, dedicated staff, and **strong and
-          efficient management**,
+          <br /> With experienced faculty, dedicated staff, and strong and
+          efficient management,
           <br /> we focus on maintaining high academic standards and providing
           students
           <br /> with the knowledge, skills, and professional values they need.
@@ -60,9 +60,9 @@ export default function Grid() {
       </Box>
       <Box
         component="img"
-        src="Images/twostud.jpeg"
+        src="/Images/twostud.jpeg"
         alt="Students on campus"
-        className="hover-zoom-image h-auto max-h-150 w-full object-contain sm:h-auto lg:w-1/2 sm-2px"
+        className="hover-zoom-image h-auto max-h-150 w-full object-contain sm:h-auto lg:w-1/2 FFFFFFsm-2px"
         sx={{ borderRadius: "20px", marginRight: "10px" }}
       />
     </Box>

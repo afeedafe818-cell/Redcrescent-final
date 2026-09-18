@@ -10,19 +10,19 @@ import Button from "@mui/material/Button";
 const Image = [
   {
     id: 1,
-    url: "Images/head1.jpeg",
+    url: "/Images/head1.jpeg",
   },
   {
     id: 2,
-    url: "Images/head2.jpeg",
+    url: "/Images/head2.jpeg",
   },
   {
     id: 3,
-    url: "Images/head3.jpeg",
+    url: "/Images/head3.jpeg",
   },
   {
     id: 4,
-    url: "Images/Teacher.jpeg",
+    url: "/Images/Teacher.jpeg",
   },
 ];
 export default function Hero() {

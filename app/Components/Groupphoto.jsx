@@ -5,27 +5,27 @@ import Typography from "@mui/material/Typography";
 const itemData = [
   {
     id: 1,
-    img: "Images/head1.jpeg",
+    img: "/Images/head1.jpeg",
     title: "Bed",
   },
   {
     id: 2,
-    img: "Images/twostud.jpeg",
+    img: "/Images/twostud.jpeg",
     title: "Kitchen",
   },
   {
     id: 3,
-    img: "Images/head2.jpeg",
+    img: "/Images/head2.jpeg",
     title: "Sink",
   },
   {
     id: 4,
-    img: "Images/head3.jpeg",
+    img: "/Images/head3.jpeg",
     title: "Books",
   },
   {
     id: 5,
-    img: "Images/teacher.jpeg",
+    img: "/Images/Teacher.jpeg",
     title: "Bed",
   },
   {

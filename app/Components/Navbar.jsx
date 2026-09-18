@@ -52,6 +52,22 @@ function Navbar() {
             </ListItemButton>
           </ListItem>
         ))}
+        <ListItem disablePadding>
+          <ListItemButton
+            component="a"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSeuPW7LBshuoNXyXf5_Be0HJuv6jCi7zOpU1nFRSjmB2rgeQQ/viewform?usp=sharing&ouid=111701974333241427644"
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{
+              justifyContent: "center",
+              bgcolor: "#129A6A",
+              color: "white",
+              "&:hover": { bgcolor: "#0d7f56" },
+            }}
+          >
+            <ListItemText primary="Register" sx={{ textAlign: "center" }} />
+          </ListItemButton>
+        </ListItem>
       </List>
     </Box>
   );
@@ -81,13 +97,25 @@ function Navbar() {
           >
             <MenuIcon />
           </IconButton>
+          <Box
+            component="img"
+            src="/Images/redcresent.jpg"
+            alt="Red Crescent Medical Institute"
+            sx={{
+              display: { xs: "block", sm: "none" },
+              width: 130,
+              height: "auto",
+              marginLeft: "auto",
+              borderRadius: "8px",
+            }}
+          />
           <Typography
             variant="h6"
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
             <img
-              src="/images/redcresent.jpg"
+              src="/Images/redcresent.jpg"
               alt=""
               width={300}
               style={{

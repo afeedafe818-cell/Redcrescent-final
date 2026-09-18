@@ -31,7 +31,7 @@ export default function About() {
       <Box sx={{ marginTop: -200, paddingTop: 200 }}>
         <Box
           component="img"
-          src="Images/head1.jpeg"
+          src="/Images/head1.jpeg"
           alt="Red Crescent campus"
           className="mx-auto mt-7 h-64 w-full max-w-2xl rounded-xl object-cover sm:h-80"
         />

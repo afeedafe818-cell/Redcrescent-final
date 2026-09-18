@@ -1,10 +1,10 @@
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
+import CourseCardImage from "./CourseCardImage";
 
 const courses = [
   {
@@ -58,10 +58,10 @@ export default function CourseSection() {
             },
           }}
         >
-          <CardMedia
-            className="hover-zoom-media h-56 object-cover sm:h-64"
-            image={course.image}
-            title={course.title}
+          <CourseCardImage
+            src={course.image}
+            alt={course.title}
+            className="h-56 sm:h-64"
           />
           <CardContent sx={{ flexGrow: 1 }}>
             <Typography className="consistent-heading" gutterBottom component="div">

@@ -1,10 +1,16 @@
+"use client";
+
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function Grid() {
+  const router = useRouter();
+
   const Readmore = () => {
-    navigate("/about");
+    router.push("/about");
   };
 
   return (
@@ -59,9 +65,12 @@ export default function Grid() {
         </Button>
       </Box>
       <Box
-        component="img"
+        component={Image}
         src="/Images/twostud.jpeg"
         alt="Students on campus"
+        width={900}
+        height={600}
+        sizes="(max-width: 1024px) 100vw, 50vw"
         className="hover-zoom-image h-auto max-h-150 w-full object-contain sm:h-auto lg:w-1/2 FFFFFFsm-2px"
         sx={{ borderRadius: "20px", marginRight: "10px" }}
       />

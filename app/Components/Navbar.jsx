@@ -16,6 +16,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const drawerWidth = 240;
 const navItems = ["Home", "About Us", "Courses", "Contact"];
@@ -98,9 +99,12 @@ function Navbar() {
             <MenuIcon />
           </IconButton>
           <Box
-            component="img"
+            component={Image}
             src="/Images/redcresent.jpg"
             alt="Red Crescent Medical Institute"
+            width={130}
+            height={44}
+            sizes="130px"
             sx={{
               display: { xs: "block", sm: "none" },
               width: 130,
@@ -114,10 +118,12 @@ function Navbar() {
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
-            <img
+            <Image
               src="/Images/redcresent.jpg"
-              alt=""
+              alt="Red Crescent Medical Institute"
               width={300}
+              height={90}
+              sizes="300px"
               style={{
                 marginLeft: "60px",
                 marginTop: 10,
@@ -207,23 +213,8 @@ function Navbar() {
           backgroundColor: "#129A6A",
           color: "white",
           boxShadow: "0 3px 10px rgba(0, 0, 0, 0.2)",
-          animation: "registerPulse 1.8s ease-in-out infinite",
           "&:hover": {
             bgcolor: "#0d7f56",
-            animation: "none",
-          },
-          "@keyframes registerPulse": {
-            "0%, 100%": {
-              backgroundColor: "#129A6A",
-              boxShadow: "0 3px 10px rgba(18, 154, 106, 0.25)",
-            },
-            "50%": {
-              backgroundColor: "#22b879",
-              boxShadow: "0 3px 18px rgba(18, 154, 106, 0.65)",
-            },
-          },
-          "@media (prefers-reduced-motion: reduce)": {
-            animation: "none",
           },
         }}
       >

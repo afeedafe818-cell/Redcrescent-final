@@ -3,7 +3,6 @@ import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Hero from "../Components/Hero";
@@ -11,6 +10,7 @@ import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 
 import { useRouter } from "next/navigation";
+import CourseCardImage from "../Components/CourseCardImage";
 
 const category = [
   { label: "Masters", path: "/Masters" },
@@ -133,11 +133,7 @@ export default function Courses() {
               },
             }}
           >
-            <CardMedia
-              sx={{ height: 300 }}
-              image={course.image}
-              title={course.title}
-            />
+            <CourseCardImage src={course.image} alt={course.title} />
             <CardContent sx={{ flexGrow: 1 }}>
               <Typography
                 gutterBottom

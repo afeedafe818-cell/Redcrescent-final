@@ -1,12 +1,13 @@
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import Image from "next/image";
 
 const itemData = [
   {
     id: 1,
-    img: "/Images/head1.jpeg",
-    title: "Bed",
+    img: "/Images/stages.jpg",
+    title: "Students at a campus event",
   },
   {
     id: 2,
@@ -30,17 +31,17 @@ const itemData = [
   },
   {
     id: 6,
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjpMEQyycyeJ-QrW0bZx_dvWeLF9p907xvBfqYyLh_JQ&s=10",
+        img: "/Images/stage.jpg",
     title: "Kitchen",
   },
   {
     id: 7,
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqZCf5jTCS1I6txSGBlq1Stwp0P6ZaTsIwFB05Qq4fyw&s=10",
+        img: "/Images/students.jpg",
     title: "Sink",
   },
   {
     id: 8,
-    img: "https://assets-us-01.kc-usercontent.com/99f113b4-e5f7-00d2-23c0-c83ca2e4cfa2/05181ceb-ba4a-4527-a0fe-81c8f0be8112/Romania-Ukraine-education-conflict-2022-UN0645387.jpg",
+        img: "/Images/head1.jpeg",
     title: "Books",
   },
 ];
@@ -63,14 +64,26 @@ export default function Gropuphoto() {
         sx={{ display: "grid" }}
       >
         {itemData.map((i) => (
-          <Box
-            key={i.id}
-            component="img"
-            src={i.img}
-            alt={i.title}
-            className="hover-zoom-image h-48 w-full max-w-[300px] rounded-lg object-cover"
-            sx={{ objectFit: "cover" }}
-          />
+          <Box key={i.id} className="relative h-48 w-full max-w-[300px]">
+            {i.img.startsWith("/") ? (
+              <Image
+                src={i.img}
+                alt={i.title}
+                fill
+                loading="lazy"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                className="hover-zoom-image rounded-lg object-cover"
+              />
+            ) : (
+              <Box
+                component="img"
+                src={i.img}
+                alt={i.title}
+                loading="lazy"
+                className="hover-zoom-image h-full w-full rounded-lg object-cover"
+              />
+            )}
+          </Box>
         ))}
       </Box>
       <Box

@@ -4,8 +4,11 @@ import IconButton from "@mui/material/IconButton";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import Typography from "@mui/material/Typography";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Button from "@mui/material/Button";
+import NextImage from "next/image";
+
+const MotionImage = motion(NextImage);
 
 const Image = [
   {
@@ -24,6 +27,11 @@ const Image = [
     id: 4,
     url: "/Images/Teacher.jpeg",
   },
+  {
+    id: 5,
+    url: "/Images/stage.jpeg",
+  },
+ 
 ];
 export default function Hero() {
   const [current, setCurrent] = useState(0);
@@ -43,17 +51,27 @@ export default function Hero() {
   }, []);
 
   return (
-    <Box className="relative w-full max-w-full overflow-hidden" sx={{ position: "relative" }}>
-      <motion.img
-        src={Image[current].url}
-        initial={{ x: 300, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.6 }}
-        className="block h-[55vh] w-full max-w-full object-cover sm:h-[70vh] lg:h-[90vh]"
-        style={{
-          filter: "brightness(60%)",
-        }}
-      />
+    <Box className="relative h-[55vh] w-full max-w-full overflow-hidden sm:h-[70vh] lg:h-[90vh]" sx={{ position: "relative" }}>
+      <AnimatePresence initial={false} mode="sync">
+        <MotionImage
+          key={Image[current].id}
+          src={Image[current].url}
+          alt="Red Crescent Medical Institute campus"
+          fill
+          priority={current === 0}
+          loading={current === 0 ? "eager" : "lazy"}
+          sizes="100vw"
+          initial={{ x: "100%" }}
+          animate={{ x: 0 }}
+          exit={{ x: "-100%" }}
+          transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+          className="absolute inset-0 block object-cover"
+          style={{
+            filter: "brightness(60%)",
+            objectPosition: current === 4 ? "center bottom" : "center",
+          }}
+        />
+      </AnimatePresence>
 
       <IconButton
         onClick={Nextimage}
@@ -130,7 +148,7 @@ export default function Hero() {
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-          The leading course provider in India And Dubai
+          The leading course provider in India & Dubai
         </Typography>
         <Button
           href="https://docs.google.com/forms/d/e/1FAIpQLSeuPW7LBshuoNXyXf5_Be0HJuv6jCi7zOpU1nFRSjmB2rgeQQ/viewform?usp=sharing&ouid=111701974333241427644"

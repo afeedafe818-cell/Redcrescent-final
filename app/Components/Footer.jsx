@@ -70,6 +70,7 @@ export default function Footer() {
             muted
             loop
             playsInline
+            preload="none"
             sx={{
               width: { xs: "100%", sm: 280, md: 300 },
               height: 200,
@@ -230,7 +231,7 @@ export default function Footer() {
                 },
               }}
             >
-              rchrimsferook.com
+             rchrims.feroke@gmail.com
             </Typography>
           </Box>
 
@@ -258,6 +259,43 @@ export default function Footer() {
               }}
             >
               +91 9947993382
+            </Typography>
+            <Tooltip title="WhatsApp" placement="right">
+              <IconButton
+                href="https://wa.me/917736272666"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Contact us on WhatsApp"
+                sx={{
+                  marginLeft: -0.5,
+                  color: "#25D366",
+                  width: 40,
+                  height: 40,
+                  "&:hover": {
+                    bgcolor: "#25D366",
+                    color: "white",
+                  },
+                }}
+              >
+                <WhatsAppIcon sx={{ fontSize: 28 }} />
+              </IconButton>
+            </Tooltip>
+            <Typography
+              component="a"
+              href="https://wa.me/917736272666"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{
+                color: "black",
+                textDecoration: "none",
+                marginLeft:-2,
+                fontSize: 16,
+                "&:hover": {
+                  textDecoration: "underline",
+                },
+              }}
+            >
+              +91 7736272666
             </Typography>
           </Box>
 

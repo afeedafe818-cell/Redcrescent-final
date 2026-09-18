@@ -1,5 +1,6 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
+import Image from "next/image";
 
 export default function About() {
   return (
@@ -30,9 +31,12 @@ export default function About() {
       </Box>
       <Box sx={{ marginTop: -200, paddingTop: 200 }}>
         <Box
-          component="img"
+          component={Image}
           src="/Images/head1.jpeg"
           alt="Red Crescent campus"
+          width={900}
+          height={400}
+          sizes="(max-width: 1024px) 100vw, 768px"
           className="mx-auto mt-7 h-64 w-full max-w-2xl rounded-xl object-cover sm:h-80"
         />
 

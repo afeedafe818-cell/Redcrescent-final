@@ -15,8 +15,6 @@ const address = [
         <br />
         Ramanattukara
         <br />
-        Kozhikode
-        <br />
         Kerala - 673631
       </>
     ),
@@ -31,7 +29,6 @@ const address = [
         Dubai Knowledge Park
         <br />
         Dubai
-        <br />
         United Arab Emirates
       </>
     ),
@@ -54,8 +51,7 @@ export default function Contact() {
           variant="h3"
           sx={{
             marginTop: 3,
-            marginRight: 9,
-            marginBottom: -5,
+            marginBottom: 0,
             color: "#1e4472",
             textDecoration: "underline",
           }}
@@ -70,14 +66,16 @@ export default function Contact() {
           display: "flex",
           justifyContent: "center",
           alignItems: "flex-start",
-          gap: 25,
+          gap: { xs: 4, md: 25 },
           mt: 10,
           flexWrap: "wrap",
           border: "2px solid #129A6A",
           borderRadius: 15,
-          width: 1000,
-          height: 400,
-          marginLeft: 30,
+          width: { xs: "calc(100% - 32px)", md: 1000 },
+          minHeight: 400,
+          height: "auto",
+          margin: "0 auto",
+          p: { xs: 3, md: 0 },
           bgcolor: "white",
         }}
       >
@@ -86,9 +84,9 @@ export default function Contact() {
             <Box
               key={index}
               sx={{
-                width: 300,
-                marginTop: 10,
-                marginLeft: 5,
+                width: { xs: "100%", md: 300 },
+                marginTop: { xs: 2, md: 10 },
+                marginLeft: 0,
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
@@ -158,9 +156,8 @@ export default function Contact() {
           sx={{
             textAlign: "center",
             mt: 10,
-            marginLeft: -10,
             color: "#1e4472",
-            marginBottom: -10,
+            marginBottom: 0,
             textDecoration: "underline",
           }}
         >

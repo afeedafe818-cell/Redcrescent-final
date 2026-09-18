@@ -33,6 +33,7 @@ export default function TestimonialsSection() {
             component="img"
             src={image.img}
             alt={image.title}
+            loading="lazy"
             className="hover-zoom-image block h-24 w-24 shrink-0 rounded-full border-[3px] object-cover p-1"
           />
           <Typography className="consistent-heading mt-2 w-full">

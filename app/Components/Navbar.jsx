@@ -147,8 +147,10 @@ function Navbar() {
               </Button>
             ))}
             <Button
+              component="a"
               href="https://docs.google.com/forms/d/e/1FAIpQLSeuPW7LBshuoNXyXf5_Be0HJuv6jCi7zOpU1nFRSjmB2rgeQQ/viewform?usp=sharing&ouid=111701974333241427644"
               target="_blank"
+              rel="noopener noreferrer"
               sx={{
                 fontSize: 20,
                 marginRight: 15,
@@ -187,6 +189,46 @@ function Navbar() {
           {drawer}
         </Drawer>
       </nav>
+      <Button
+        component="a"
+        href="https://docs.google.com/forms/d/e/1FAIpQLSeuPW7LBshuoNXyXf5_Be0HJuv6jCi7zOpU1nFRSjmB2rgeQQ/viewform?usp=sharing&ouid=111701974333241427644"
+        target="_blank"
+        rel="noopener noreferrer"
+        sx={{
+          display: "inline-flex",
+          fontSize: { xs: 14, sm: 16 },
+          width: 120,
+          position: "fixed",
+          left: 16,
+          bottom: 72,
+          zIndex: 1300,
+          border: "1px solid green",
+          borderRadius: "20px",
+          backgroundColor: "#129A6A",
+          color: "white",
+          boxShadow: "0 3px 10px rgba(0, 0, 0, 0.2)",
+          animation: "registerPulse 1.8s ease-in-out infinite",
+          "&:hover": {
+            bgcolor: "#0d7f56",
+            animation: "none",
+          },
+          "@keyframes registerPulse": {
+            "0%, 100%": {
+              backgroundColor: "#129A6A",
+              boxShadow: "0 3px 10px rgba(18, 154, 106, 0.25)",
+            },
+            "50%": {
+              backgroundColor: "#22b879",
+              boxShadow: "0 3px 18px rgba(18, 154, 106, 0.65)",
+            },
+          },
+          "@media (prefers-reduced-motion: reduce)": {
+            animation: "none",
+          },
+        }}
+      >
+        Register
+      </Button>
       <Toolbar sx={{ minHeight: { xs: 56, sm: 64 } }} />
     </Box>
   );
